@@ -1,12 +1,12 @@
- const API_KEY = window.prompt(`     Enter your API key.
-     it can be found here: https://platform.openai.com/account/api-keys`); 
-if (API_KEY){
+ const API_KEY = window.prompt(`     Enter your API key:`);
+ if (API_KEY){
 async function generateText() {
   API_KEY
   const model = "text-davinci-002";
   const endpoint = `https://cors-anywhere.herokuapp.com/https://api.openai.com/v1/engines/${model}/jobs`;
 
   const prompt = document.getElementById("prompt").value;
+  document.getElementById("prompt").value = ""
 
   const response = await fetch(endpoint, {
     method: "POST",
@@ -41,4 +41,5 @@ document.getElementById("generate-button").addEventListener("click", generateTex
 else {
 document.getElementById("prompt").innerHTML = "the API key field can't be empty."
   document.getElementById("prompt").disabled = true;
+  document.getElementById("generated-text").innerHTML = 'Get your API key from: <a href="https://platform.openai.com/account/api-keys"> https://platform.openai.com/account/api-keys </a> '
 }
