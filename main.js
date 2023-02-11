@@ -1,5 +1,19 @@
- const API_KEY = window.prompt(`     Enter your API key:`);
+
+
+let API_KEY;
+if (localStorage.getItem("API_KEY")){
+   API_KEY = localStorage.getItem("API_KEY")
+}
+else{
+  API_KEY = window.prompt(`     Enter your API key:`);}
+ localStorage.setItem("API_KEY", API_KEY)
  if (API_KEY){
+   document.getElementById("clear").addEventListener("click", function (){
+     localStorage.clear()
+     API_KEY = ""
+     document.getElementById("generated-text").innerHTML= `<li> You have signed out </li>`
+     window.location.reload()
+   })
 async function generateText() {
   const model = "text-davinci-002";
   const endpoint = `https://cors-anywhere.herokuapp.com/https://api.openai.com/v1/engines/${model}/jobs`;
