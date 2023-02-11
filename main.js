@@ -1,7 +1,6 @@
  const API_KEY = window.prompt(`     Enter your API key:`);
  if (API_KEY){
 async function generateText() {
-  API_KEY
   const model = "text-davinci-002";
   const endpoint = `https://cors-anywhere.herokuapp.com/https://api.openai.com/v1/engines/${model}/jobs`;
 
@@ -28,7 +27,7 @@ async function generateText() {
   if (!json.choices || !json.choices.length) {
     // Handle the error: no text generated
     console.error(json);
-    document.getElementById("generated-text").innerHTML += "<li>You: "+ prompt+"</li><li>" + "ChatGPT: No text generated"+"</li>";
+    document.getElementById("generated-text").innerHTML += "<li>You: "+ prompt+"</li><li>" + "ChatGPT: No text generated: "+ json.error.message+"</li>";
     return;
   }
 
