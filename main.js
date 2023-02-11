@@ -2,10 +2,17 @@ let API_KEY;
 if (localStorage.getItem("API_KEY")){
    API_KEY = localStorage.getItem("API_KEY")
 }
+
 else{
-  API_KEY = window.prompt(`     Enter your API key:`);}
- localStorage.setItem("API_KEY", API_KEY)
+  API_KEY = window.prompt(`     Enter your API key:`);
+  localStorage.setItem("API_KEY", API_KEY)
+  if (API_KEY === null){
+    localStorage.clear()
+  }
+}
+
  if (API_KEY){
+   console.log(API_KEY)
    document.getElementById("clear").addEventListener("click", function (){
      localStorage.clear()
      API_KEY = ""
