@@ -1,5 +1,6 @@
- const API_KEY = window.prompt("    Enter your API key  ");
- if (API_KEY){
+ const API_KEY = window.prompt(`     Enter your API key.
+     it can be found here: https://platform.openai.com/account/api-keys`); 
+if (API_KEY){
 async function generateText() {
   API_KEY
   const model = "text-davinci-002";
