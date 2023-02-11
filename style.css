@@ -1,4 +1,7 @@
 body {
+  font-family: monospace;
+  background-color: #2d2d2e
+;
   margin:40px;
 }
 * {
@@ -19,7 +22,15 @@ input {
   background-color: #fafafa;
 }
 
-
+#prompt {
+        color: #393a3c;
+        font-weight: bold;
+        text-align: center;
+      }
+.generated-text {
+        color: #222222;
+        margin-left: 20px;
+      }
 button{
   display: flex;
   margin: auto;
