@@ -1,5 +1,3 @@
-
-
 let API_KEY;
 if (localStorage.getItem("API_KEY")){
    API_KEY = localStorage.getItem("API_KEY")
