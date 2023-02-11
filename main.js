@@ -1,4 +1,5 @@
  const API_KEY = window.prompt("    Enter your API key  ");
+ if (API_KEY){
 async function generateText() {
   API_KEY
   const model = "text-davinci-002";
@@ -35,3 +36,8 @@ async function generateText() {
 }
 
 document.getElementById("generate-button").addEventListener("click", generateText);
+}
+else {
+document.getElementById("prompt").innerHTML = "the API key field can't be empty."
+  document.getElementById("prompt").disabled = true;
+}
