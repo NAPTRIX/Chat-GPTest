@@ -8,6 +8,7 @@ else{
   localStorage.setItem("API_KEY", API_KEY)
   if (API_KEY === null){
     localStorage.clear()
+    window.location.reload()
   }
 }
 
