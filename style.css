@@ -1,8 +1,12 @@
+#clear{
+  background-color: red;
+}
+#Buttons{
+  display: flex;
+}
 body {
   font-family: monospace;
-  background-color: #2d2d2e
-;
-  margin:40px;
+  background-color: #2d2d2e;
 }
 * {
   box-sizing: border-box;
@@ -32,7 +36,6 @@ input {
         margin-left: 20px;
       }
 button{
-  display: flex;
   margin: auto;
   text-align: center;
   background-color: #111827;
