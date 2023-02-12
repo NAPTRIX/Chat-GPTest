@@ -22,7 +22,7 @@ else{
    })
 async function generateText() {
   const model = "text-davinci-002";
-  const endpoint = `https://cors-anywhere.herokuapp.com/https://api.openai.com/v1/engines/${model}/jobs`;
+  const endpoint = `https://api.openai.com/v1/engines/${model}/jobs`;
 
   const prompt = document.getElementById("prompt").value;
   document.getElementById("prompt").value = ""
