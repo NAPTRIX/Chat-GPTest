@@ -22,7 +22,7 @@ else{
    })
 async function generateText() {
   const model = "text-davinci-002";
-  const endpoint = `https://api.openai.com/v1/engines/${model}/jobs`;
+  const endpoint = `https://api.openai.com/v1/engines/${model}/completions`;
 
   const prompt = document.getElementById("prompt").value;
   document.getElementById("prompt").value = ""
@@ -35,7 +35,7 @@ async function generateText() {
     },
     body: JSON.stringify({
       prompt: prompt,
-      max_tokens: 100,
+      max_tokens: 3000,
       n: 1,
       stop: null,
       temperature: 0.5,
